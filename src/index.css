@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", "Playfair Display", Georgia, serif;
+  --font-display: "Cinzel", "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  /* Clean Warm Canvas Tokens */
+  --color-warm-50: #FCFBF9;
+  --color-warm-100: #FAF8F5;
+  --color-warm-200: #F5EFEB;
+  --color-warm-300: #EAE2D8;
+  --color-warm-400: #D8CCC0;
+  --color-warm-500: #9E9184;
+  --color-warm-700: #554D45;
+  --color-warm-800: #332D28;
+  --color-warm-900: #1B1714;
+
+  /* Rich Charcoal Text */
+  --color-charcoal-900: #141213;
+  --color-charcoal-800: #1F1B1D;
+  --color-charcoal-600: #4D4548;
+  --color-charcoal-400: #82787C;
+
+  /* Highlighting Element: Luxurious Burgundy / Deep Wine */
+  --color-burgundy-950: #2E050F;
+  --color-burgundy-900: #420B19;
+  --color-burgundy-800: #541021;
+  --color-burgundy-700: #6E1528;
+  --color-burgundy-600: #7B1E34;
+  --color-burgundy-500: #93243E;
+  --color-burgundy-400: #B03251;
+  --color-burgundy-300: #D67087;
+  --color-burgundy-200: #F2D5DC;
+  --color-burgundy-100: #F9E8EC;
+  --color-burgundy-50: #FDF4F6;
+}
+
+/* Custom Base Styles */
+html {
+  font-family: var(--font-sans);
+  background-color: #FCFBF9;
+  color: #141213;
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-serif);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-editorial {
+  font-family: var(--font-serif);
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Premium micro-interactions & smooth transitions */
+.hover-lift {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.hover-lift:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px -10px rgba(123, 30, 52, 0.14);
+  border-color: rgba(123, 30, 52, 0.35);
+}
+
+.burgundy-glow {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.burgundy-glow:hover {
+  box-shadow: 0 0 24px -2px rgba(123, 30, 52, 0.4);
+}
+
+.glass-card {
+  background: rgba(252, 251, 249, 0.82);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(234, 226, 216, 0.85);
+}
+
+/* Print styles for prescription and billing invoices */
+@media print {
+  body {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  .printable-document {
+    box-shadow: none !important;
+    border: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+}

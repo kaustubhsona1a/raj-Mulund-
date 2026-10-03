@@ -1,0 +1,6 @@
+{
+  "name": "Raj Hospital · Dr. Kush Mukhi, MS & Doctor OS",
+  "description": "Raj Hospital · Advanced Orthopaedics, Shoulder & Joint Reconstruction, and private Doctor Management System.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
