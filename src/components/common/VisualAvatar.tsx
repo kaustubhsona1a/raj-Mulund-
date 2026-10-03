@@ -7,7 +7,7 @@ interface DoctorVisualProps {
 
 /**
  * High-Fidelity Doctor Representation for Dr. Kush Mukhi
- * Uses the official real photograph stored in /dr-kush-mukhi.jpg
+ * Displays the real official photograph without heavy dark shading
  */
 export const DoctorVisual: React.FC<DoctorVisualProps> = ({
   className = '',
@@ -17,18 +17,10 @@ export const DoctorVisual: React.FC<DoctorVisualProps> = ({
 
   return (
     <div
-      className={`relative overflow-hidden rounded-3xl bg-[#14181F] border border-[#DDD3C5] shadow-2xl flex flex-col justify-end group ${className}`}
+      className={`relative overflow-hidden rounded-3xl bg-[#F8F5F1] border-2 border-white/80 shadow-[0_20px_50px_rgba(20,18,19,0.12)] flex flex-col justify-end group ring-1 ring-[#EAE2D8] ${className}`}
     >
-      {/* Studio Lighting & Ambient Glow */}
-      <div className="absolute inset-0 pointer-events-none z-10">
-        <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-[#141213]/40 to-transparent" />
-        <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[#141213]/90 via-[#141213]/40 to-transparent" />
-        {/* Subtle Burgundy rim reflection */}
-        <div className="absolute bottom-6 right-0 w-64 h-64 bg-[#7B1E34]/25 rounded-full blur-3xl pointer-events-none" />
-      </div>
-
-      {/* Real Photograph of Dr. Kush Mukhi */}
-      <div className="relative w-full h-full min-h-[420px] overflow-hidden flex items-center justify-center bg-[#1B212B]">
+      {/* Real Photograph of Dr. Kush Mukhi - Clean, natural lighting with zero heavy black shading */}
+      <div className="relative w-full h-full min-h-[420px] overflow-hidden flex items-center justify-center bg-[#F2EDE7]">
         <img
           src="/dr-kush-mukhi.jpg"
           alt="Dr. Kush Mukhi, MS (Orthopaedic) - Consultant & Shoulder Surgeon"
@@ -43,6 +35,9 @@ export const DoctorVisual: React.FC<DoctorVisualProps> = ({
           }}
           loading="eager"
         />
+
+        {/* Delicate subtle bottom gradient just behind the plaque for natural integration */}
+        <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#141213]/40 to-transparent pointer-events-none" />
       </div>
 
       {/* Editorial Physician Plaque */}
@@ -74,30 +69,45 @@ export const DoctorVisual: React.FC<DoctorVisualProps> = ({
 };
 
 /**
- * Aesthetic Modern Hospital Architecture Visual Background
- * Uses the high-resolution modern hospital architectural photograph stored in /hospital-modern-bg.jpg
- * with an architectural balance so the hospital building is clearly visible and aesthetic.
+ * Aesthetic Modern Glass Hospital Architecture Visual Background
+ * Highlights the modern glass building facade and lush green grass lawn
+ * with high visibility and smart gradient balancing.
  */
 export const AestheticHospitalBackground: React.FC<{
   className?: string;
   overlayOpacity?: string;
-}> = ({ className = '', overlayOpacity = '' }) => {
+  variant?: 'hero' | 'subtle' | 'card';
+}> = ({ className = '', overlayOpacity = '', variant }) => {
+  const activeVariant = variant || (overlayOpacity ? 'subtle' : 'hero');
   return (
     <div className={`absolute inset-0 overflow-hidden pointer-events-none ${className}`}>
-      {/* High-Resolution Modern Architectural Hospital Image */}
+      {/* High-Resolution Modern Architectural Glass Hospital with Green Grass Lawn */}
       <img
         src="/hospital-modern-bg.jpg"
-        alt="Raj Hospital Modern Architecture"
-        className="w-full h-full object-cover object-right-top md:object-center filter saturate-[0.9] contrast-[1.05] opacity-35"
+        alt="Raj Hospital Modern Glass Pavilion & Grounds"
+        className={`w-full h-full object-cover transition-opacity duration-500 ${
+          activeVariant === 'hero'
+            ? 'object-center md:object-[center_35%] filter saturate-[1.1] contrast-[1.03] opacity-85'
+            : 'object-center filter saturate-[0.95] contrast-[1.0] opacity-35'
+        }`}
         loading="eager"
       />
 
-      {/* Elegant Architectural Gradient Overlay: keeps text 100% crisp on the left, showcases hospital on the right */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#FCFBF9] via-[#FCFBF9]/85 to-[#FCFBF9]/30" />
-      <div className="absolute inset-0 bg-gradient-to-b from-[#FCFBF9]/80 via-transparent to-[#FCFBF9]" />
-
-      {/* Subtle Burgundy architectural aura */}
-      <div className="absolute top-0 right-1/4 w-[450px] h-[350px] bg-[#7B1E34]/8 rounded-full blur-[100px]" />
+      {/* Hero Balanced Overlay: Keeps building glass and lawn visible while preserving text contrast */}
+      {activeVariant === 'hero' ? (
+        <>
+          {/* Left-to-right soft fade that cushions the text while leaving the center & right crystal clear */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#FCFBF9]/95 via-[#FCFBF9]/65 to-transparent w-full lg:w-3/5" />
+          {/* Subtle top edge fade for seamless navbar transition */}
+          <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#FCFBF9]/90 via-[#FCFBF9]/40 to-transparent" />
+          {/* Subtle bottom edge blend into next section */}
+          <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#FCFBF9] via-[#FCFBF9]/40 to-transparent" />
+          {/* Architectural ambient warm tint */}
+          <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-[#7B1E34]/5 rounded-full blur-3xl pointer-events-none" />
+        </>
+      ) : (
+        <div className={`absolute inset-0 ${overlayOpacity || 'bg-[#FCFBF9]/85'}`} />
+      )}
     </div>
   );
 };

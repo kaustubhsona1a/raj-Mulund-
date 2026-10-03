@@ -15,7 +15,7 @@ export const AppointmentCTASection: React.FC<AppointmentCTASectionProps> = ({
 
   return (
     <section className="relative overflow-hidden py-24 bg-[#F5EFEB] border-t border-[#EAE2D8]">
-      <AestheticHospitalBackground overlayOpacity="bg-[#F5EFEB]/90" />
+      <AestheticHospitalBackground variant="subtle" overlayOpacity="bg-[#F5EFEB]/80" />
 
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center space-y-6">
         <motion.div
