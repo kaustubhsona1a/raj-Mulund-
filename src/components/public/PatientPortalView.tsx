@@ -57,17 +57,17 @@ export const PatientPortalView: React.FC<PatientPortalViewProps> = ({ onBook }) 
   const patientReports = labReports.filter((r) => r.patientId === activePatient?.id);
 
   return (
-    <div className="relative py-12 md:py-20 bg-[#FAF8F5]">
+    <div className="relative py-6 sm:py-16 bg-[#FAF8F5]">
       <AestheticHospitalBackground overlayOpacity="bg-[#FAF8F5]/92" />
 
-      <div className="relative z-10 max-w-5xl mx-auto px-6 space-y-10">
+      <div className="relative z-10 max-w-5xl mx-auto px-3 sm:px-6 space-y-6 sm:space-y-10">
         {/* Header */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#EAE2D8] pb-6">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 border-b border-[#EAE2D8] pb-4 sm:pb-6">
           <div>
-            <span className="text-xs uppercase tracking-widest text-[#7B1E34] font-bold">
+            <span className="text-[10px] sm:text-xs uppercase tracking-widest text-[#7B1E34] font-bold">
               Raj Hospital Patient Portal
             </span>
-            <h1 className="text-3xl font-editorial font-bold text-[#1F1B1D] mt-1">
+            <h1 className="text-2xl sm:text-3xl font-serif font-bold text-[#1F1B1D] mt-0.5 sm:mt-1">
               Your Orthopaedic Care & Surgical Records
             </h1>
             <p className="text-xs sm:text-sm text-[#554D51]">
@@ -118,7 +118,7 @@ export const PatientPortalView: React.FC<PatientPortalViewProps> = ({ onBook }) 
 
         {/* Patient Profile Banner */}
         {activePatient && (
-          <div className="bg-white p-6 sm:p-7 rounded-3xl border border-[#DDD3C5] shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 hover-lift">
+          <div className="bg-white p-4 sm:p-6 rounded-xl sm:rounded-2xl border border-[#DDD3C5] shadow-xs flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4 hover-lift">
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 rounded-full bg-[#FDF4F6] text-[#7B1E34] font-bold flex items-center justify-center text-sm font-mono border border-[#F2D5DC]">
                 {activePatient.code}

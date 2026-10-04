@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, ChevronRight } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
 import { motion } from 'motion/react';
 
 interface AreasOfCareSectionProps {
@@ -43,22 +43,22 @@ export const AreasOfCareSection: React.FC<AreasOfCareSectionProps> = ({
   ];
 
   return (
-    <section className="py-20 bg-[#FCFBF9]">
-      <div className="max-w-6xl mx-auto px-6">
+    <section className="py-8 sm:py-16 bg-[#FCFBF9]">
+      <div className="max-w-6xl mx-auto px-3 sm:px-6">
         <motion.div
-          initial={{ opacity: 0, y: 15 }}
+          initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="max-w-xl mb-12"
+          transition={{ duration: 0.5 }}
+          className="max-w-xl mb-6 sm:mb-10"
         >
-          <span className="text-[11px] uppercase tracking-[0.2em] text-[#7B1E34] font-bold font-display">
+          <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.2em] text-[#7B1E34] font-bold font-display">
             Surgical Care Areas
           </span>
-          <h2 className="text-3xl sm:text-4xl font-serif font-bold text-[#141213] mt-2">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-[#141213] mt-1 sm:mt-2">
             Targeted orthopaedic & reconstructive surgery.
           </h2>
-          <p className="text-xs sm:text-sm text-[#554D45] mt-2 font-sans">
+          <p className="text-xs sm:text-sm text-[#554D45] mt-1 font-sans">
             Led by Dr. Kush Mukhi at Dr. Mukhi's Raj Hospital and L H Hiranandani Hospital, Powai.
           </p>
         </motion.div>
@@ -67,36 +67,36 @@ export const AreasOfCareSection: React.FC<AreasOfCareSectionProps> = ({
           {careAreas.map((area, idx) => (
             <motion.div
               key={idx}
-              initial={{ opacity: 0, y: 12 }}
+              initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx * 0.08 }}
+              transition={{ duration: 0.4, delay: idx * 0.05 }}
               onClick={() => onSelectArea && onSelectArea(area.title)}
-              className="py-6 sm:py-7 group flex flex-col sm:flex-row sm:items-center justify-between gap-5 hover:bg-[#FDF4F6]/75 transition-all duration-300 cursor-pointer px-4 sm:px-6 -mx-4 sm:-mx-6 rounded-2xl hover:border-l-4 hover:border-[#7B1E34] hover:shadow-xs"
+              className="py-4 sm:py-6 group flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-5 hover:bg-[#FDF4F6]/75 transition-all duration-300 cursor-pointer px-3 sm:px-5 rounded-xl hover:border-l-4 hover:border-[#7B1E34]"
             >
-              <div className="flex items-start gap-4 sm:max-w-md">
-                <span className="font-mono text-sm font-semibold text-[#7B1E34] opacity-80 pt-0.5">
+              <div className="flex items-start gap-3 sm:gap-4 sm:max-w-md">
+                <span className="font-mono text-xs sm:text-sm font-semibold text-[#7B1E34] opacity-80 pt-0.5">
                   {area.num}
                 </span>
                 <div>
-                  <h3 className="text-lg sm:text-xl font-serif font-bold text-[#141213] group-hover:text-[#7B1E34] transition-colors">
+                  <h3 className="text-base sm:text-lg lg:text-xl font-serif font-bold text-[#141213] group-hover:text-[#7B1E34] transition-colors leading-snug">
                     {area.title}
                   </h3>
-                  <span className="inline-block mt-1 text-[10px] uppercase tracking-wider text-[#7B1E34] font-semibold bg-[#F9E8EC] px-2 py-0.5 rounded">
+                  <span className="inline-block mt-1 text-[9px] sm:text-[10px] uppercase tracking-wider text-[#7B1E34] font-semibold bg-[#F9E8EC] px-2 py-0.5 rounded">
                     {area.badge}
                   </span>
                 </div>
               </div>
 
-              <div className="flex-1 sm:max-w-lg pl-7 sm:pl-0">
+              <div className="flex-1 sm:max-w-lg pl-6 sm:pl-0">
                 <p className="text-xs sm:text-sm text-[#554D45] leading-relaxed group-hover:text-[#141213] transition-colors">
                   {area.description}
                 </p>
               </div>
 
-              <div className="flex items-center gap-1 text-xs font-semibold text-[#7B1E34] opacity-75 group-hover:opacity-100 transition-all shrink-0 pl-7 sm:pl-0">
+              <div className="flex items-center gap-1 text-xs font-semibold text-[#7B1E34] opacity-75 group-hover:opacity-100 transition-all shrink-0 pl-6 sm:pl-0">
                 <span>View Details</span>
-                <ChevronRight className="w-4 h-4 transform group-hover:translate-x-1.5 transition-transform" />
+                <ChevronRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 transform group-hover:translate-x-1.5 transition-transform" />
               </div>
             </motion.div>
           ))}

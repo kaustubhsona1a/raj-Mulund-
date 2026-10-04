@@ -14,9 +14,9 @@ export const PublicFooter: React.FC<PublicFooterProps> = ({
   const { clinicInfo } = useClinic();
 
   return (
-    <footer className="bg-[#141213] text-[#FAF8F5] pt-16 pb-12 border-t border-[#262123]">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-[#2B2528]">
+    <footer className="bg-[#141213] text-[#FAF8F5] py-8 sm:py-14 border-t border-[#262123]">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 sm:gap-10 pb-8 sm:pb-12 border-b border-[#2B2528]">
           {/* Col 1: Wordmark & Tagline */}
           <div className="md:col-span-4 space-y-4">
             <div className="space-y-1">

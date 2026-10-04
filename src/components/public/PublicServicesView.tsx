@@ -93,21 +93,21 @@ export const PublicServicesView: React.FC<PublicServicesViewProps> = ({
   );
 
   return (
-    <div className="relative py-12 md:py-20 bg-[#FCFBF9]">
+    <div className="relative py-6 sm:py-16 bg-[#FCFBF9]">
       <AestheticHospitalBackground overlayOpacity="bg-[#FCFBF9]/92" />
 
-      <div className="relative z-10 max-w-6xl mx-auto px-6 space-y-12">
+      <div className="relative z-10 max-w-6xl mx-auto px-3 sm:px-6 space-y-6 sm:space-y-12">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="max-w-2xl space-y-2"
+          className="max-w-2xl space-y-1.5 sm:space-y-2"
         >
-          <span className="text-[11px] uppercase tracking-[0.2em] text-[#7B1E34] font-bold font-display">
+          <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.2em] text-[#7B1E34] font-bold font-display">
             Orthopaedic & Joint Reconstruction Specialties
           </span>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-[#141213]">
+          <h1 className="text-2xl sm:text-4xl md:text-5xl font-serif font-bold text-[#141213]">
             Surgical mastery for joint restoration.
           </h1>
           <p className="text-xs sm:text-sm text-[#554D45]">
@@ -116,30 +116,30 @@ export const PublicServicesView: React.FC<PublicServicesViewProps> = ({
         </motion.div>
 
         {/* 2-Column Split: Services List and Active Detail Panel */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-8 items-start">
           {/* Services Selector Navigation */}
-          <div className="lg:col-span-5 space-y-3">
+          <div className="lg:col-span-5 space-y-2.5 sm:space-y-3">
             {services.map((s) => (
               <button
                 key={s.id}
                 onClick={() => setActiveService(s)}
-                className={`w-full text-left p-5 rounded-2xl border transition-all cursor-pointer ${
+                className={`w-full text-left p-3.5 sm:p-5 rounded-xl sm:rounded-2xl border transition-all cursor-pointer ${
                   activeService.id === s.id
-                    ? 'bg-white border-[#7B1E34] shadow-md -translate-y-0.5 ring-1 ring-[#7B1E34]/20'
-                    : 'bg-[#F7F2EC]/80 border-[#EAE2D8] hover:bg-white hover:border-[#DDD3C5] hover:-translate-y-0.5'
+                    ? 'bg-white border-[#7B1E34] shadow-sm -translate-y-0.5 ring-1 ring-[#7B1E34]/20'
+                    : 'bg-[#F7F2EC]/80 border-[#EAE2D8] hover:bg-white hover:border-[#DDD3C5]'
                 }`}
               >
                 <div className="flex items-center justify-between">
-                  <h3 className="text-base font-serif font-bold text-[#141213]">
+                  <h3 className="text-sm sm:text-base font-serif font-bold text-[#141213]">
                     {s.title}
                   </h3>
                   <ChevronRight
-                    className={`w-4 h-4 transition-transform ${
+                    className={`w-4 h-4 transition-transform shrink-0 ${
                       activeService.id === s.id ? 'text-[#7B1E34] translate-x-1' : 'text-[#82787C]'
                     }`}
                   />
                 </div>
-                <p className="text-xs text-[#554D45] mt-1 line-clamp-2 font-sans">
+                <p className="text-[11px] sm:text-xs text-[#554D45] mt-1 line-clamp-2 font-sans">
                   {s.tagline}
                 </p>
               </button>
@@ -152,7 +152,7 @@ export const PublicServicesView: React.FC<PublicServicesViewProps> = ({
             initial={{ opacity: 0, x: 10 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.4 }}
-            className="lg:col-span-7 bg-white p-8 sm:p-10 rounded-3xl border border-[#DDD3C5] shadow-md space-y-6"
+            className="lg:col-span-7 bg-white p-4 sm:p-8 rounded-xl sm:rounded-2xl border border-[#DDD3C5] shadow-xs space-y-4 sm:space-y-6"
           >
             <div>
               <span className="text-xs text-[#7B1E34] font-semibold font-mono bg-[#FDF4F6] px-3 py-1 rounded-full border border-[#F2D5DC]">

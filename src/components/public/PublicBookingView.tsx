@@ -100,16 +100,16 @@ export const PublicBookingView: React.FC<PublicBookingViewProps> = ({
   };
 
   return (
-    <div className="relative py-12 md:py-20 bg-[#FAF8F5]">
+    <div className="relative py-6 sm:py-16 bg-[#FAF8F5]">
       <AestheticHospitalBackground overlayOpacity="bg-[#FAF8F5]/92" />
 
-      <div className="relative z-10 max-w-3xl mx-auto px-6">
+      <div className="relative z-10 max-w-3xl mx-auto px-3 sm:px-6">
         {/* Header */}
-        <div className="mb-10 text-center space-y-2">
-          <span className="text-xs uppercase tracking-widest text-[#7B1E34] font-bold">
+        <div className="mb-6 sm:mb-8 text-center space-y-1.5 sm:space-y-2">
+          <span className="text-[10px] sm:text-xs uppercase tracking-widest text-[#7B1E34] font-bold">
             Raj Hospital · OPD Appointments
           </span>
-          <h1 className="text-3xl sm:text-4xl font-editorial font-bold text-[#1F1B1D]">
+          <h1 className="text-2xl sm:text-4xl font-serif font-bold text-[#1F1B1D]">
             Book your orthopaedic consultation.
           </h1>
           <p className="text-xs sm:text-sm text-[#554D51]">
@@ -191,7 +191,7 @@ export const PublicBookingView: React.FC<PublicBookingViewProps> = ({
                 <div
                   key={item.type}
                   onClick={() => handleNextFromType(item.type)}
-                  className={`p-5 rounded-2xl border transition-all cursor-pointer flex items-start justify-between gap-4 hover-lift ${
+                  className={`p-3.5 sm:p-5 rounded-xl sm:rounded-2xl border transition-all cursor-pointer flex items-start justify-between gap-3 sm:gap-4 hover-lift ${
                     selectedType === item.type
                       ? 'bg-white border-[#7B1E34] shadow-md ring-1 ring-[#7B1E34]/20'
                       : 'bg-white/80 border-[#E5DDD1] hover:border-[#7B1E34]/40 hover:bg-white'
@@ -212,7 +212,7 @@ export const PublicBookingView: React.FC<PublicBookingViewProps> = ({
                   </div>
 
                   <div className="text-right shrink-0">
-                    <div className="text-base font-bold text-[#7B1E34] font-mono">
+                    <div className="text-sm sm:text-base font-bold text-[#7B1E34] font-mono">
                       ₹{item.price}
                     </div>
                     <div className="text-[10px] text-[#7A7175] mt-0.5">OPD fee</div>
@@ -225,7 +225,7 @@ export const PublicBookingView: React.FC<PublicBookingViewProps> = ({
 
         {/* STEP 2: DATE & TIME */}
         {step === 2 && (
-          <div className="space-y-6 bg-white p-6 sm:p-8 rounded-3xl border border-[#DDD3C5] shadow-md">
+          <div className="space-y-4 sm:space-y-6 bg-white p-4 sm:p-8 rounded-xl sm:rounded-2xl border border-[#DDD3C5] shadow-xs">
             <div className="flex items-center justify-between border-b border-[#EAE2D8] pb-4">
               <div>
                 <h2 className="text-lg font-editorial font-bold text-[#1F1B1D]">
@@ -308,7 +308,7 @@ export const PublicBookingView: React.FC<PublicBookingViewProps> = ({
         {step === 3 && (
           <form
             onSubmit={handleSubmitBooking}
-            className="space-y-6 bg-white p-6 sm:p-8 rounded-3xl border border-[#DDD3C5] shadow-md"
+            className="space-y-4 sm:space-y-6 bg-white p-4 sm:p-8 rounded-xl sm:rounded-2xl border border-[#DDD3C5] shadow-xs"
           >
             <div className="flex items-center justify-between border-b border-[#EAE2D8] pb-4">
               <div>
@@ -432,13 +432,13 @@ export const PublicBookingView: React.FC<PublicBookingViewProps> = ({
 
         {/* STEP 4: CONFIRMATION STATE */}
         {step === 4 && confirmedBooking && (
-          <div className="bg-white p-8 sm:p-12 rounded-3xl border border-[#DDD3C5] shadow-lg text-center space-y-6">
-            <div className="w-14 h-14 bg-[#FDF4F6] text-[#7B1E34] border border-[#F2D5DC] rounded-full flex items-center justify-center mx-auto shadow-sm">
-              <CheckCircle2 className="w-8 h-8" />
+          <div className="bg-white p-5 sm:p-10 rounded-xl sm:rounded-2xl border border-[#DDD3C5] shadow-sm text-center space-y-4 sm:space-y-6">
+            <div className="w-12 h-12 sm:w-14 sm:h-14 bg-[#FDF4F6] text-[#7B1E34] border border-[#F2D5DC] rounded-full flex items-center justify-center mx-auto shadow-xs">
+              <CheckCircle2 className="w-6 h-6 sm:w-8 sm:h-8" />
             </div>
 
             <div className="space-y-1">
-              <h2 className="text-2xl sm:text-3xl font-editorial font-bold text-[#1F1B1D]">
+              <h2 className="text-xl sm:text-3xl font-serif font-bold text-[#1F1B1D]">
                 Consultation Confirmed
               </h2>
               <p className="text-xs sm:text-sm text-[#554D51]">
@@ -446,7 +446,7 @@ export const PublicBookingView: React.FC<PublicBookingViewProps> = ({
               </p>
             </div>
 
-            <div className="bg-[#FAF8F5] border border-[#E7DFD4] rounded-2xl p-6 max-w-md mx-auto text-left text-xs space-y-2.5">
+            <div className="bg-[#FAF8F5] border border-[#E7DFD4] rounded-xl p-4 sm:p-6 max-w-md mx-auto text-left text-xs space-y-2.5">
               <div className="flex justify-between items-center border-b border-[#EAE2D8] pb-2.5">
                 <span className="text-[#786E72] font-medium">Booking Reference:</span>
                 <span className="font-mono font-bold text-sm text-[#7B1E34]">
